@@ -1,92 +1,92 @@
 <template>
-    <div id="appAlumno">
+    <div id="appDocente">
         <div class="row">
             <div class="col-12 col-md-6">
                 <div class="card">
-                    <div class="card-header">REGISTRO DE ALUMNO</div>
+                    <div class="card-header">REGISTRO DE DOCENTE</div>
                     <div class="card-body">
-                        <form id="frmAlumno" @reset.prevent="nuevoAlumno" v-on:submit.prevent="guardarAlumno">
+                        <form id="frmDocente" @reset.prevent="nuevoDocente" v-on:submit.prevent="guardarDocente">
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtCodigoAlumno">CODIGO:</label>
+                                    <label for="txtCodigoDocente">CODIGO:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[US|SM]{2}[IS|LI]{2}[0-9]{6}" 
                                         title="Ingrese un codigo de alumno de 3 digitos"
-                                            v-model="alumno.codigo" type="text" class="form-control" name="txtCodigoAlumno" id="txtCodigoAlumno">
+                                            v-model="docente.codigo" type="text" class="form-control" name="txtCodigoDocente" id="txtCodigoDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtNombreAlumno">NOMBRE:</label>
+                                    <label for="txtNombreDocente">NOMBRE:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
-                                        v-model="alumno.nombre" type="text" class="form-control" name="txtNombreAlumno" id="txtNombreAlumno">
+                                        v-model="docente.nombre" type="text" class="form-control" name="txtNombreDocente" id="txtNombreDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtFechaAlumno">Fecha de Nacimiento:</label>
+                                    <label for="txtFechaDocente">Fecha de Nacimiento:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required 
-                                        v-model="alumno.fecha" type="date" class="form-control" name="txtFechaAlumno" id="txtFechaAlumno">
+                                        v-model="docente.fecha" type="date" class="form-control" name="txtFechaDocente" id="txtFechaDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtDireccionAlumno">DIRECCION:</label>
+                                    <label for="txtDireccionDocente">DIRECCION:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
-                                        v-model="alumno.direccion" type="text" class="form-control" name="txtDireccionAlumno" id="txtDireccionAlumno">
+                                        v-model="docente.direccion" type="text" class="form-control" name="txtDireccionDocente" id="txtDireccionDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtMunicipioAlumno">Municipio:</label>
+                                    <label for="txtMunicipioDocente">Municipio:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
-                                        v-model="alumno.municipio" type="text" class="form-control" name="txtMunicipioAlumno" id="txtMunicipioAlumno">
+                                        v-model="docente.municipio" type="text" class="form-control" name="txtMunicipioDocente" id="txtMunicipioDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtNDepartamentoAlumno">Departamento:</label>
+                                    <label for="txtNDepartamentoDocente">Departamento:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
-                                        v-model="alumno.departamento" type="text" class="form-control" name="txtNDepartamentoAlumno" id="txtNDepartamentoAlumno">
+                                        v-model="docente.departamento" type="text" class="form-control" name="txtNDepartamentoDocente" id="txtNDepartamentoDocente">
                                 </div>
                             </div>
 
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtTelefonoAlumno">TELEFONO:</label>
+                                    <label for="txtTelefonoDocente">TELEFONO:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[0-9]{4}-[0-9]{4}"
-                                        v-model="alumno.telefono" type="text" class="form-control" name="txtTelefonoAlumno" id="txtTelefonoAlumno">
+                                        v-model="docente.telefono" type="text" class="form-control" name="txtTelefonoDocente" id="txtTelefonoDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                                 <div class="col-4 col-md-4">
-                                    <label for="txtDuiAlumno">DUI:</label>
+                                    <label for="txtDuiDocente">DUI:</label>
                                 </div>
                                 <div class="col-6 col-md-6">
                                     <input required pattern="[0-9]{8}-[0-9]{1}"
-                                        v-model="alumno.dui" type="text" class="form-control" name="txtDuiAlumno" id="txtDuiAlumno">
+                                        v-model="docente.dui" type="text" class="form-control" name="txtDuiDocente" id="txtDuiDocente">
                                 </div>
                             </div>
                             <div class="row p-1">
                             <div class="col-4 col-md-4">
-                                <label for="txtSexoAlumno">Sexo:</label>
+                                <label for="txtSexoDocente">Sexo:</label>
                             </div>
                             <div class="col-6 col-md-6">
                                 <select  required                    
-                                        v-model="alumno.sexo"  class="form-control" name="txtSexoAlumno" id="txtSexoAlumno">
+                                        v-model="docente.sexo"  class="form-control" name="txtSexoDocente" id="txtSexoDocente">
                                         <option value="Masculino">Hombre</option>
                                         <option value="Femenino">Mujer</option>    
                                     </select> 
@@ -107,7 +107,7 @@
             </div>
             <div class="col-12 col-md-6">
                 <div class="card">
-                    <div class="card-header">LISTADO DE ALUMNOS</div>
+                    <div class="card-header">LISTADO DE DOCENTES</div>
                     <div class="card-body">
                         <table class="table table-bordered table-hover">
                             <thead>
@@ -130,17 +130,17 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr v-for="alumno in alumnos" :key="alumno.idAlumno" @click="modificarAlumno(alumno)" >
-                                    <td>{{ alumno.codigo }}</td>
-                                    <td>{{ alumno.nombre }}</td>
-                                    <td>{{ alumno.fecha }}</td>
-                                    <td>{{ alumno.direccion }}</td>
-                                    <td>{{ alumno.municipio }}</td>
-                                    <td>{{ alumno.departamento}}</td>
-                                    <td>{{ alumno.telefono }}</td>
-                                    <td>{{ alumno.dui }}</td>
-                                    <td>{{ alumno.sexo }}</td>
-                                    <td><button class="btn btn-danger" @click="eliminarAlumno(alumno)">ELIMINAR</button></td>
+                                <tr v-for="docente in docentes" :key="docente.idDocente" @click="modificarDocente(docente)" >
+                                    <td>{{ docente.codigo }}</td>
+                                    <td>{{ docente.nombre }}</td>
+                                    <td>{{ docente.fecha }}</td>
+                                    <td>{{ docente.direccion }}</td>
+                                    <td>{{ docente.municipio }}</td>
+                                    <td>{{ docente.departamento}}</td>
+                                    <td>{{ docente.telefono }}</td>
+                                    <td>{{ docente.dui }}</td>
+                                    <td>{{ docente.sexo }}</td>
+                                    <td><button class="btn btn-danger" @click="eliminarDocente(docente)">ELIMINAR</button></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -159,9 +159,9 @@ import axios from 'axios';
             return {
                 accion:'nuevo',
                 buscar: '',
-                alumnos: [],
-                alumno:{
-                    idAlumno  : '',
+                docentes: [],
+                docente:{
+                    idDocente  : '',
                     codigo    : '',
                     nombre    : '',
                     fecha    : '',
@@ -175,62 +175,62 @@ import axios from 'axios';
             }
         },
         methods:{
-            async guardarAlumno(){
+            async guardarDocente(){
                 this.listar();
                 let method = 'POST';
                 if(this.accion==='nuevo'){
-                    this.alumno.idAlumno = new Date().getTime().toString(16);
-                    this.alumnos.push( JSON.parse( JSON.stringify(this.alumno) ) );
+                    this.docente.idDocente = new Date().getTime().toString(16);
+                    this.docentes.push( JSON.parse( JSON.stringify(this.docente) ) );
                     method = 'POST';
                 }else if(this.accion==='modificar'){
-                    let index = this.alumnos.findIndex(alumno=>alumno.idAlumno==this.alumno.idAlumno);
-                    this.alumnos[index] = JSON.parse( JSON.stringify(this.alumno) );
+                    let index = this.docentes.findIndex(docente=>docente.idDocente==this.docente.idDocente);
+                    this.docentes[index] = JSON.parse( JSON.stringify(this.docente) );
                     method='PUT';
                 }else if(this.accion==='eliminar'){
-                    let index = this.alumnos.findIndex(alumno=>alumno.idAlumno==this.alumno.idAlumno);
-                    this.alumnos.splice(index,1);
+                    let index = this.docentes.findIndex(docente=>docente.idDocente==this.docente.idDocente);
+                    this.docentes.splice(index,1);
                     method = 'DELETE';
                 }
-                localStorage.setItem("alumnos", JSON.stringify(this.alumnos) );
+                localStorage.setItem("docentes", JSON.stringify(this.docentes) );
                 await axios({
-                    url:'/alumnos',
+                    url:'/docentes',
                     method,
-                    data: this.alumno
+                    data: this.docente
                 }).then(resp=>{
                     console.log('exito', resp);
                 }).catch(err=>{
                     console.log('error', err);
                 });
-                this.nuevoAlumno();
+                this.nuevoDocente();
             },
-            eliminarAlumno(alumno){
-                if( confirm(`Esta seguro de eliminar a ${alumno.nombre}?`) ){
+            eliminarDocente(docente){
+                if( confirm(`Esta seguro de eliminar a ${docente.nombre}?`) ){
                     this.accion='eliminar';
-                    this.alumno=alumno;
-                    this.guardarAlumno();
+                    this.docente=docente;
+                    this.guardarDocente();
                 }
             },
-            nuevoAlumno(){
+            nuevoDocente(){
                 this.accion = 'nuevo';
-                this.alumno.idAlumno = '';
-                this.alumno.codigo = '';
-                this.alumno.nombre = '';
-                this.alumno.fecha = '';
-                this.alumno.direccion = '';
-                this.alumno.municipio = '';
-                this.alumno.departamento = '';
-                this.alumno.telefono = '';
-                this.alumno.dui = '';
-                this.alumno.sexo = '';
+                this.docente.idDocente = '';
+                this.docente.codigo = '';
+                this.docente.nombre = '';
+                this.docente.fecha = '';
+                this.docente.direccion = '';
+                this.docente.municipio = '';
+                this.docente.departamento = '';
+                this.docente.telefono = '';
+                this.docente.dui = '';
+                this.docente.sexo = '';
             },
-            modificarAlumno(alumno){
+            modificarDocente(docente){
                 this.accion = 'modificar';
-                this.alumno = alumno;
+                this.docente = docente;
             },
             listar(){
-                this.alumnos = JSON.parse( localStorage.getItem('alumnos') || "[]" )
-                    .filter(alumno=>alumno.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
-                    
+                this.docentes = JSON.parse( localStorage.getItem('docentes') || "[]" )
+                    .filter(docente=>docente.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
+                   
             }
         }
     }

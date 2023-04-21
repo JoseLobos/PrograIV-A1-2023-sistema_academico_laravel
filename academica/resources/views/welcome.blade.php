@@ -5,7 +5,6 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>::.. ACACEMICA ..::</title>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha2/dist/css/bootstrap.min.css">
-        <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/alertifyjs@1.13.1/build/css/alertify.min.css"/>
     </head>
     <body>
         <div id="app">
@@ -29,9 +28,11 @@
                 </div>
             </nav>
             <div id="appSistema">
-                <component-docentes ref="docente" v-show="forms['docente'].mostrar"></component-docentes>
-                <component-materias ref="materia" v-show="forms['materia'].mostrar"></component-materias>
-                <alumno ref="alumno" v-show="forms['alumno'].mostrar"></alumno>
+                <docente ref="docente" v-show="forms['docente'].mostrar"></docente>
+                <alumno   ref="alumno"  v-show="forms['alumno'].mostrar"></alumno>
+                <materia   ref="materia"  v-show="forms['materia'].mostrar"></materia>
+               
+                
                 <component-matriculas ref="matricula" v-show="forms['matricula'].mostrar"></component-matriculas>
             </div>
         </div>

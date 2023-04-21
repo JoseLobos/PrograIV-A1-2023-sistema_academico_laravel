@@ -1,9 +1,15 @@
 <?php
 
 use App\Models\Alumno;
+use App\Models\Docente;
+use App\Models\Materia;
+
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
+use App\Http\Controllers\DocenteController;
+use App\Http\Controllers\MateriaController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +29,22 @@ Route::controller(AlumnoController::class)->group(function(){
     Route::post('/alumnos', 'store');
     Route::put('/alumnos', 'update');
     Route::delete('/alumnos', 'destroy');
+
+    
+});
+Route::controller(DocenteController::class)->group(function(){
+    Route::get('/docentes', 'index');
+    Route::post('/docentes', 'store');
+    Route::put('/docentes', 'update');
+    Route::delete('/docentes', 'destroy');
 });
 
+Route::controller(MateriaController::class)->group(function(){
+    Route::get('/materias', 'index');
+    Route::post('/materias', 'store');
+    Route::put('/materias', 'update');
+    Route::delete('/materias', 'destroy');
+});
 Route::get('/', function () {
     return view('welcome');
 });

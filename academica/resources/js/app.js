@@ -1,13 +1,13 @@
 import './bootstrap';
 import { createApp } from 'vue';
-import alertifyjs from 'alertifyjs';
 window.db = "";
-
+import materia from './components/MateriaComponent.vue';
 import alumno from './components/AlumnoComponent.vue';
+import docente from './components/DocenteComponent.vue';
 
 const app = createApp({
     components:{
-        alumno,
+        alumno,docente,materia
     },
     data(){
         return {
@@ -39,11 +39,9 @@ const app = createApp({
             };
             indexDB.onsuccess= e=>{
                 db = e.target.result;
-                alertifyjs.success('Sistema LISTO.');
             };
             indexDB.onerror= e=>{
                 console.error( e );
-                alertifyjs.error('Error: ' + e);
             };
         }, 
     },
