@@ -77,9 +77,13 @@ class AlumnoController extends Controller
         $alumno::where('idAlumno', $request['idAlumno'])->update([
             'codigo'=>$request['codigo'],
             'nombre'=>$request['nombre'],
+            'fecha'=>$request['fecha'],
             'direccion'=>$request['direccion'],
+            'municipio'=>$request['municipio'],
+            'departamento'=>$request['departamento'],
             'telefono'=>$request['telefono'],
             'dui'=>$request['dui'],
+            'sexo'=>$request['sexo'],
         ]);
         return response()->json(['msg'=>'ok'], 200);
     }
