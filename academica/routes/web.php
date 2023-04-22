@@ -3,12 +3,18 @@
 use App\Models\Alumno;
 use App\Models\Docente;
 use App\Models\Materia;
+use App\Models\Matricula;
+
+
 
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\MateriaController;
+use App\Http\Controllers\MatriculaController;
+
+
 
 
 /*
@@ -44,6 +50,12 @@ Route::controller(MateriaController::class)->group(function(){
     Route::post('/materias', 'store');
     Route::put('/materias', 'update');
     Route::delete('/materias', 'destroy');
+});
+Route::controller(MatriculaController::class)->group(function(){
+    Route::get('/matriculas', 'index');
+    Route::post('/matriculas', 'store');
+    Route::put('/matriculas', 'update');
+    Route::delete('/matriculas', 'destroy');
 });
 Route::get('/', function () {
     return view('welcome');

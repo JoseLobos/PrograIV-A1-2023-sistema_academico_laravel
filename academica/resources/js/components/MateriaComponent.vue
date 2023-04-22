@@ -26,17 +26,14 @@
                                 </div>
                             </div>
                             <div class="row p-1">
-
-                      <div class="col col-md-2">Docente:</div>
-
-                    <div class="col col-md-3">
-
-                   <input title="Ingrese el docente" v-model="materia.docente"
-                    pattern="[A-Za-zñÑáéíóúü .]{3,75}" required type="text" class="form-control">
-
-                  </div>
-
-                 </div>
+                                <div class="col-3 col-md-2">
+                                    <label for="txtDocenteMateria">Docente:</label>
+                                </div>
+                                <div class="col-6 col-md-6">
+                                    <input required pattern="[A-Za-zÑñáéíóú ]{3,75}"
+                                        v-model="materia.docente" type="text" class="form-control" name="txtDocenteMateria" id="txtDocenteMateria">
+                                </div>
+                            </div>
                          <div class="row p-1">
                             <div class="col-3 col-md-2">De:</div>
                             <div class="col-6 col-md-6">
@@ -157,7 +154,7 @@ import axios from 'axios';
         },
         methods:{
             async guardarMateria(){
-               
+                this.listar();
                 let method = 'POST';
                 if(this.accion==='nuevo'){
                     this.materia.idMateria = new Date().getTime().toString(16);
@@ -207,9 +204,11 @@ import axios from 'axios';
                 this.accion = 'modificar';
                 this.materia = materia;
             },
-          
+            listar(){
+                this.materias = JSON.parse( localStorage.getItem('materias') || "[]" )
+                    .filter(materia=>materia.codigo.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
                     
             }
         }
-    
+    }
 </script>

@@ -31,7 +31,7 @@
                 <docente ref="docente" v-show="forms['docente'].mostrar"></docente>
                 <alumno   ref="alumno"  v-show="forms['alumno'].mostrar"></alumno>
                 <materia   ref="materia"  v-show="forms['materia'].mostrar"></materia>
-               
+                <matricula   ref="matricula"  v-show="forms['matricula'].mostrar"></matricula>
                 
                 <component-matriculas ref="matricula" v-show="forms['matricula'].mostrar"></component-matriculas>
             </div>
