@@ -26,7 +26,7 @@ const app = createApp({
     methods:{
         abrirFormulario(form){
             this.forms[form].mostrar = !this.forms[form].mostrar;
-            //this.$refs[form].listar();
+            this.$refs[form].listar();
         },
         abrirBD(){
             let indexDB = indexedDB.open('db_sistema_academico',1);

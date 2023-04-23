@@ -143,7 +143,10 @@ import axios from 'axios';
             },
             listar(){
                 this.inscripciones = JSON.parse( localStorage.getItem('inscripciones') || "[]" )
-                    .filter(inscripcion=>inscripcion.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
+                .filter(inscripcion=>inscripcion.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+               
+                inscripcion.materia.indexOf(this.buscar)>-1
+                )
                     
             }
         }
