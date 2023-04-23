@@ -5,11 +5,12 @@ import materia from './components/MateriaComponent.vue';
 import alumno from './components/AlumnoComponent.vue';
 import docente from './components/DocenteComponent.vue';
 import matricula from './components/MatriculaComponent.vue';
+import inscripcion from './components/InscripcionComponent.vue';
 
 
 const app = createApp({
     components:{
-        alumno,docente,materia,matricula
+        alumno,docente,materia,matricula,inscripcion
     },
     data(){
         return {
@@ -35,12 +36,15 @@ const app = createApp({
                 tblalumno = req.createObjectStore('tblalumnos',{keyPath:'idAlumno'}),
                 tblmateria = req.createObjectStore('tblmaterias',{keyPath:'idMateria'});
                 tblmatricula = req.createObjectStore('tblmatriculas',{keyPath:'idMatricula'});
+                tblinscripcion = req.createObjectStore('tblinscripciones',{keyPath:'idInscripcion'});
                 
 
             tbldocente.createIndex('idDocente', 'idDocente', {unique:true});
             tblalumno.createIndex('idAlumno', 'idAlumno', {unique:true});
             tblmateria.createIndex('idMateria', 'idMateria', {unique:true});
             tblmatricula.createIndex('idMatricula', 'idMatricula', {unique:true});
+            tblinscripcion.createIndex('idInscripcion', 'idInscripcion', {unique:true});
+           
            
             };
             indexDB.onsuccess= e=>{

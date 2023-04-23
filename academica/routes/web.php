@@ -4,7 +4,7 @@ use App\Models\Alumno;
 use App\Models\Docente;
 use App\Models\Materia;
 use App\Models\Matricula;
-
+use App\Models\Inscripcion;
 
 
 use Illuminate\Support\Facades\Auth;
@@ -13,6 +13,7 @@ use App\Http\Controllers\AlumnoController;
 use App\Http\Controllers\DocenteController;
 use App\Http\Controllers\MateriaController;
 use App\Http\Controllers\MatriculaController;
+use App\Http\Controllers\InscripcionController;
 
 
 
@@ -56,6 +57,12 @@ Route::controller(MatriculaController::class)->group(function(){
     Route::post('/matriculas', 'store');
     Route::put('/matriculas', 'update');
     Route::delete('/matriculas', 'destroy');
+});
+Route::controller(InscripcionController::class)->group(function(){
+    Route::get('/inscripciones', 'index');
+    Route::post('/inscripciones', 'store');
+    Route::put('/inscripciones', 'update');
+    Route::delete('/inscripciones', 'destroy');
 });
 Route::get('/', function () {
     return view('welcome');
