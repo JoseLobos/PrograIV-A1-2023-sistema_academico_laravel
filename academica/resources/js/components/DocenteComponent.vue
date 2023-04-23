@@ -229,7 +229,17 @@ import axios from 'axios';
             },
             listar(){
                 this.docentes = JSON.parse( localStorage.getItem('docentes') || "[]" )
-                    .filter(docente=>docente.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
+                .filter(docente=>docente.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+                docente.codigo.indexOf(this.buscar)>-1 ||
+                docente.fecha.indexOf(this.buscar)>-1 ||
+                docente.direccion.indexOf(this.buscar)>-1 ||
+                docente.departamento.indexOf(this.buscar)>-1 ||
+                docente.telefono.indexOf(this.buscar)>-1 ||
+                docente.dui.indexOf(this.buscar)>-1 ||
+                docente.sexo.indexOf(this.buscar)>-1 ||
+                docente.municipio.indexOf(this.buscar)>-1
+                    )
+                   
                    
             }
         }

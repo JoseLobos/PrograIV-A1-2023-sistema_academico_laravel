@@ -228,9 +228,18 @@ import axios from 'axios';
                 this.alumno = alumno;
             },
             listar(){
-                this.alumnos = JSON.parse( localStorage.getItem('alumnos') || "[]" )
-                    .filter(alumno=>alumno.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
-                    
+                
+                    this.alumnos = JSON.parse( localStorage.getItem('alumnos') || "[]" )
+                    .filter(alumno=>alumno.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+                alumno.codigo.indexOf(this.buscar)>-1 ||
+                alumno.fecha.indexOf(this.buscar)>-1 ||
+                alumno.direccion.indexOf(this.buscar)>-1 ||
+                alumno.departamento.indexOf(this.buscar)>-1 ||
+                alumno.telefono.indexOf(this.buscar)>-1 ||
+                alumno.dui.indexOf(this.buscar)>-1 ||
+                alumno.sexo.indexOf(this.buscar)>-1 ||
+                alumno.municipio.indexOf(this.buscar)>-1
+                    )
             }
         }
     }

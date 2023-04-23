@@ -206,7 +206,15 @@ import axios from 'axios';
             },
             listar(){
                 this.materias = JSON.parse( localStorage.getItem('materias') || "[]" )
-                    .filter(materia=>materia.codigo.toLowerCase().indexOf(this.buscar.toLowerCase())>-1);
+                .filter(materia=>materia.materia.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+                materia.codigo.indexOf(this.buscar)>-1 ||
+                materia.docente.indexOf(this.buscar)>-1 ||
+                materia.a.indexOf(this.buscar)>-1 ||
+                materia.de.indexOf(this.buscar)>-1 ||
+                materia.dia.indexOf(this.buscar)>-1 ||
+                materia.aula.indexOf(this.buscar)>-1 
+               
+                    )
                     
             }
         }

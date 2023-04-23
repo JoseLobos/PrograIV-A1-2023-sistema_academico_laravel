@@ -174,10 +174,12 @@ import axios from 'axios';
             },
             listar(){
                 this.matriculas = JSON.parse( localStorage.getItem('matriculas') || "[]" )
-                    .filter(matricula=>matricula.fechadematri.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
-                    matricula.fechadematri.indexOf(this.buscar)>-1 ||
-                    matricula.correo.indexOf(this.buscar)>-1
-                    );
+                .filter(matricula=>matricula.nombre.toLowerCase().indexOf(this.buscar.toLowerCase())>-1||
+                matricula.fechadematri.indexOf(this.buscar)>-1 ||
+                matricula.correo.indexOf(this.buscar)>-1 ||
+                matricula.carrera.indexOf(this.buscar)>-1 
+              
+                    )
             }
         }
     }
