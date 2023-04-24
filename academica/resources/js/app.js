@@ -25,7 +25,12 @@ const app = createApp({
     },
     methods:{
         abrirFormulario(form){
-            this.forms[form].mostrar = !this.forms[form].mostrar;
+            for (let key in this.forms){
+                if(key !==form){
+                    this.forms[key].mostrar=false;
+                }
+            }
+            this.forms[form].mostrar = true;
             this.$refs[form].listar();
         },
         abrirBD(){
